@@ -18,5 +18,19 @@ namespace UnitTestProject2
         {
             Console.WriteLine("Pass test logs; never appears");
         }
+        
+        [TestMethod]
+        public void TestMethod_Ascii()
+        {
+            var d = "7 días";
+            Assert.AreEqual("7 días", d);
+        }
+        
+        [DataRow("7 días")]
+        [DataTestMethod]
+        public void TestMethod_Ascii_Data(string input)
+        {
+            Assert.AreEqual("7 días", input);
+        }
     }
 }
